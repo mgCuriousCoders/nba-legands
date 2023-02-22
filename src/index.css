@@ -1,13 +1,104 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #f4d467;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/*! Player Card/Container Styling  */
+.card-container {
+  background-image: url("https://p4.wallpaperbetter.com/wallpaper/661/973/110/cool-nba-logo-wallpaper-preview.jpg");
+  min-width: 300px;
+}
+.card {
+  height: 400px;
+  max-width: 280px;
+  min-width: 230px;
+  transform-style: preserve-3d;
+
+  /*? Content Alignment */
+  position: relative;
+
+  user-select: none;
+}
+.card:hover {
+  box-shadow: 3px 3px 20px 5px rgba(0, 0, 0, 0.5);
+}
+
+.card-front,
+.card-back {
+  /*? === Sizing === */
+  height: 100%;
+  width: 100%;
+
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  /*? Alignment */
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.card-back .back-ul {
+  height: 100%;
+  background-image: url("https://i.pinimg.com/736x/0c/4d/1e/0c4d1e61bb5b4c1f42fce7f005d80c6f.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.card-back ul {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: black;
+}
+.player-logo {
+  transition: transform 0.2s;
+  height: 350px;
+}
+
+.player-card:hover .player-logo {
+  transform: scale(0.95);
+}
+
+/*? Flip Card Animation (CSSTransition)  */
+
+.flip-exit {
+  transform: rotateY(0deg);
+}
+
+.flip-exit-active {
+  transform: rotateY(180deg);
+  transition: transform 300ms;
+  transition-timing-function: cubic-bezier(0.57, 0.21, 0.69, 1.25);
+}
+
+.flip-exit-done {
+  transform: rotateY(180deg);
+}
+
+.flip-enter {
+  transform: rotateY(180deg);
+}
+
+.flip-enter-active {
+  transform: rotateY(0deg);
+  transition: transform 300ms;
+  transition-timing-function: cubic-bezier(0.57, 0.21, 0.69, 1.25);
+}
+
+.flip-enter-done {
+  transform: rotateY(0deg);
 }
