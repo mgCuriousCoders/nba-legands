@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/nba-legands/static/css/main.54187847.css",
+    "main.js": "/nba-legands/static/js/main.7e714948.js",
+    "index.html": "/nba-legands/index.html",
+    "main.54187847.css.map": "/nba-legands/static/css/main.54187847.css.map",
+    "main.7e714948.js.map": "/nba-legands/static/js/main.7e714948.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.54187847.css",
+    "static/js/main.7e714948.js"
+  ]
+}
